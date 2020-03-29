@@ -120,7 +120,7 @@ This project includes a `sssd.conf` file with default values and a script named 
 - Configures sssd, nss and pam
 - Copies the default `sssd.conf` from the Spec dir to `/etc/sssd/` and changes permission to 600
 - Replaces default values in `sssd.conf` with values from `jetpack config adauth` and starts sssd
-- Modifies `sssd_config` to allow password authentication and restarts sshd
+- Modifies `sshd_config` to allow password authentication and restarts sshd
 
 
 
