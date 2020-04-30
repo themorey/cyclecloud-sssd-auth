@@ -27,6 +27,7 @@ Autoscale = $Autoscale
         ldapUriIp = $ldapUriIp
         ldapBackupUri = $ldapBackupUri
         ldapBackupUriIp = $ldapBackupUriIp
+	ldapCaCertDir = $ldapCaCertDir
         ldapUserSearchBase = $ldapUserSearchBase
         ldapGroupSearchBase = $ldapGroupSearchBase
         ldapAccessFilter = $ldapAccessFilter
@@ -231,11 +232,12 @@ Order = 15
         Description = LDAP Backup URI (ie. ldap2.company.com)
         Required = False	 
 
-        [[[parameter ldapBackupUriIp]]]
-        Label = LDAP Backup URI IP
-        Description = LDAP Backup URI IP (ie. 10.0.0.201)
-        Required = ${ifThenElse(ldapBackupUri !== undefined, True, False)}
-
+        [[[parameter ldapCaCertDir]]]
+        Label = CA Cert Dir
+        Description = LDAP directory path of saved CA Cert (ie. /etc/openldap/certs)
+        Required = False
+        DefaultValue = /etc/openldap/certs
+	
         [[[parameter ldapUserSearchBase]]]
         Label = LDAP User Search
         Description = LDAP User Search Base (ie. ou=usr,ou=dept,dc=group,dc=company,dc=com)
