@@ -20,6 +20,7 @@ The following template configs enable a cluster adminstrator to enter in the inf
         ldapUri = $ldapUri
         ldapUriIp = $ldapUriIp
         ldapBackupUri = $ldapBackupUri
+        ldapCaCertDir = $ldapCaCertDir
         ldapBackupUriIp = $ldapBackupUriIp
         ldapUserSearchBase = $ldapUserSearchBase
         ldapGroupSearchBase = $ldapGroupSearchBase
@@ -83,6 +84,12 @@ The following template configs enable a cluster adminstrator to enter in the inf
             Label = LDAP Backup URI IP
             Description = LDAP Backup URI IP (ie. 10.0.0.201)
             Required = ${ifThenElse(ldapBackupUri !== undefined, True, False)}
+            
+            [[[parameter ldapCaCertDir]]]
+            Label = CA Cert Dir
+            Description = LDAP directory path of saved CA Cert (ie. /etc/openssl/certs)
+            Required = False
+            DefaultValue = /etc/openssl/certs
 
             [[[parameter ldapUserSearchBase]]]
             Label = LDAP User Search
