@@ -175,7 +175,7 @@ You can use ldap tools to discover the appropriate search base and access filter
 
 
 ## Testing Auth
-Cyclecloud managed users still work even with SSSD auth configured.  Login to your cluster node with a Cycle user and test the SSSD auth as follows (where `user1` is an AD user):
+Cyclecloud managed users still work even with SSSD auth configured (local and AD usernames should not overlap).  Login to your cluster node with a Cycle user and test the SSSD auth as follows (where `user1` is an AD user):
 
     [admin@ip-0A000409 ~]$ id user1
     uid=705601104(user1) gid=705601103(group1) groups=705601103(group1)
